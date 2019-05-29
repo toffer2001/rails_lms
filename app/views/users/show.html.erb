@@ -1,0 +1,15 @@
+<h1>Users Show</h1>
+<h2><%= @user.full_name %></h2>
+
+<h2>Courses</h2>
+<ul>
+  <% @user.courses.each do |course| %>
+    <li>
+      <% link_to course.name, course%>
+    </li>
+  <% end %>
+</ul>
+
+<br />
+
+<%= link_to 'Delete user', @user, method: :delete %>

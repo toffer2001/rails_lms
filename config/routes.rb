@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'courses#index'
+
+  resources :users # except: [:edit, :update]
+  resources :courses do
+    resources :enrollments, only: [:index, :new, :create, :destroy]
 end
